@@ -1,5 +1,6 @@
 package com.example.authe_sql
 
+import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -31,6 +32,7 @@ class MainActivity : AppCompatActivity() {
 
         myaccount.setOnClickListener {
 
+
             var firstname = myname1.text.toString()
             var secondname = myname2.text.toString()
             var email = myemail.text.toString()
@@ -49,6 +51,10 @@ class MainActivity : AppCompatActivity() {
 
                 //Toast a success message
                 Toast.makeText(this, "User Created Successfully", Toast.LENGTH_SHORT).show()
+
+                var gotologin = Intent(this, loginactivity::class.java)
+                startActivity(gotologin)
+
 
             }
 
